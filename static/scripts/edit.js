@@ -3,6 +3,7 @@
 var editor;
 
 function initialiseEditor(edId) {
+	ace.require("ace/ext/language_tools");
     editor = ace.edit(edId);
 
     // theme
@@ -20,16 +21,23 @@ function initialiseEditor(edId) {
     editor.session.setMode(mode)
 
     // vim
-    editor.setKeyboardHandler("ace/keyboard/vim");
+    //editor.setKeyboardHandler("ace/keyboard/windows");
 
     // wrap
     editor.setOption("wrap", true);
 
     // fontsize
-    editor.setOption("fontSize", 14);
+    editor.setOption("fontSize", 15);
 
     // get focus
     editor.focus();
+
+    // enable autocompletion and snippets
+    editor.setOptions({
+        enableBasicAutocompletion: true,
+        enableSnippets: true,
+        enableLiveAutocompletion: true
+    });
 }
 
 window.onload = function() {

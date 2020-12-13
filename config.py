@@ -1,3 +1,3 @@
-root=""
-key=""
-passhash=""
+root="/home/Nandraj"
+key="key"
+passhash="passhash"
